@@ -16,29 +16,28 @@ app.use(express.static("public"));
 //tell app to use Body parser
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
-
-//get home page /
-app.get('/', function(req, res){
-    let comicData;
-    fetch('http://xkcd.com/info.0.json')
-    .then(res => res.json())
-    .then(data => {
-        res.render('index',{data:data})
-    //console.log("got it");
-    })
-    
+//home page
+app.get('/',function(req,res){
+    res.render('index');
 });
 
-app.get('/random', function(req, res){
-    let randNum=Math.floor((Math.random() * 2373) + 1);
-    fetch('https://xkcd.com/'+randNum+'/info.0.json')
-    .then(res => res.json())
-    .then(data => {
-        res.render('random',{data:data})
-    });
-})
+//information page
+app.get('/information',function(req,res){
+    res.render('information');
+});
 
+//volunteer page
+app.get('/volunteer',function(req,res){
+    res.render('volunteer');
+});
+
+//contact page
+app.get('/contact',function(req,res){
+    res.render('contact');
+});
 
 //server setup
 app.listen(port, function(){

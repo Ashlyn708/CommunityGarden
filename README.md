@@ -5,7 +5,8 @@ Introduction
 
 
 Date: 
-Title:
+Title: Community Garden
+
 Requirements
 
 

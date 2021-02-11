@@ -16,7 +16,8 @@ CONTENTS OF THIS FILE
 
 
 - Implementation
- - This page implements Bootstrap framework. To obtain all the data needed, a fetch call is used to be sent to EJS. 
+   - This page implements Bootstrap framework. 
+   - To obtain all the data needed, a fetch call is used to be sent to EJS. 
 
 
 - Additional information

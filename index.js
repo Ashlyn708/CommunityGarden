@@ -36,11 +36,6 @@ app.get('/volunteer',function(req,res){
     res.render('volunteer');
 });
 
-//contact page
-//app.get('/contact',function(req,res){
-   // res.render('contact');
-//});
-
 //get contact
 var sent = false;
 

@@ -2,11 +2,11 @@
 CONTENTS OF THIS FILE
 
 - Introduction
- - Hello and thank you so much for visiting this page. This is the page for the community garden for Web Development Projects.
+  - Hello and thank you so much for visiting this page. This is the page for the community garden for Web Development Projects.
 
-    - Date: 2/23/21
-    - Title: Community Garden 
-    - Author: Lauren Author,Ashley Locey, Ashlyn Averett
+     - Date: 2/23/21
+     - Title: Community Garden 
+     - Author: Lauren Author,Ashley Locey, Ashlyn Averett
 
 -Requirements
  -For this code we are requireing the packages node-fetch, express, and ejs. In order to run this code you will need to reinstall the express package. The following steps is what you should take to run this code:

@@ -78,6 +78,19 @@ app.post('/sendEmail', (req, res) => {
 });
 
 
+//information page
+
+app.get('/information', function(req, res){
+    let id = '22';
+    fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
+    .then(res => res.json())
+    .then(data => {
+        res.render('information', {data: data})
+    });
+})
+
+
+
 //server setup
 app.listen(port, function(){
     console.log('Listening on ' + port)

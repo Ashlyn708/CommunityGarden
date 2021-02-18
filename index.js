@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var fetch = require('node-fetch');
 //create express object, call express
 var app = express();
+
 //require nodemailer
 const nodemailer = require('nodemailer');
 //get port information
@@ -20,6 +21,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+
+
 
 //home page
 app.get('/',function(req,res){
@@ -76,6 +79,8 @@ app.post('/sendEmail', (req, res) => {
     })
     res.redirect('/contact');
 });
+
+
 
 
 //server setup

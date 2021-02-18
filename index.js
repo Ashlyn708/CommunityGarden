@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var fetch = require('node-fetch');
 //create express object, call express
 var app = express();
+
 //require nodemailer
 const nodemailer = require('nodemailer');
 //get port information
@@ -20,6 +21,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+
+
 
 //home page
 app.get('/',function(req,res){
@@ -78,17 +81,20 @@ app.post('/sendEmail', (req, res) => {
 });
 
 
+//<<<<<<< AshleyBranch
 //information page
 
-app.get('/information', function(req, res){
+//app.get('/information', function(req, res){
     //let id = '22';
     //fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
     //.then(res => res.json())
     //.then(data => {
         //res.render('information', {data: data})
     //});
-})
+//})
 
+//=======
+//>>>>>>> main
 
 
 //server setup

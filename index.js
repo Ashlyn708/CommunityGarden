@@ -90,9 +90,6 @@ app.get('/information', function(req, res){
     });
 })
 
-//=======
-//>>>>>>> main
-
 
 //server setup
 app.listen(port, function(){

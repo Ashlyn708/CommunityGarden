@@ -29,11 +29,6 @@ app.get('/',function(req,res){
     res.render('index');
 });
 
-//information page
-app.get('/information',function(req,res){
-    res.render('information');
-});
-
 //volunteer page
 app.get('/volunteer',function(req,res){
     res.render('volunteer');
@@ -84,17 +79,16 @@ app.post('/sendEmail', (req, res) => {
 //<<<<<<< AshleyBranch
 //information page
 
-//app.get('/information', function(req, res){
-    //let id = '22';
-    //fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
-    //.then(res => res.json())
-    //.then(data => {
-        //res.render('information', {data: data})
-    //});
-//})
-
-//=======
-//>>>>>>> main
+app.get('/information', function(req, res){
+    // tomatoe
+    let id = '1';
+    
+    fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
+    .then(res => res.json())
+    .then(data => {
+        res.render('information', {data: data})
+    });
+})
 
 
 //server setup

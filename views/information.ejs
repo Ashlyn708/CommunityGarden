@@ -41,57 +41,53 @@
         </div>
         
     <!--Gallery-->
-    <div class="container">
-    <img src="/images/veg/tomato.jpg" alt="Avatar" class="image" style="width:100%">
-        <div class="middle">
-            <div class="text"><%= data.name%>
-               <br> Learn More </br>
-            </div>
+    <div class="row">
+        <div class="column">
+            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:100%">
+            <!-- Overlay-->
         </div>
+
+        <div class="column">
+            <img src="/images/veg/lettuce.jpg" alt="Lettuce" style="width:100%">
+        </div>
+
+        <div class="column">
+            <img src="/images/veg/cilantro.jpg" alt="Cilantro" style="width:100%">
+        </div>
+
+        <div class="column">
+            <img src="/images/veg/carrot.jpg" alt="Tomato" style="width:100%">
+        </div>
+
+        <div class="column">
+            <img src="/images/veg/Broccoli.jpg" alt="Lettuce" style="width:100%">
+        </div>
+
+        <div class="column">
+            <img src="/images/veg/bell_peppers.jpg" alt="Cilantro" style="width:100%">
+        </div>
+
     </div>
 
     <style>
-        .container {
-        position: relative;
-        width: 50%;
+        * {
+        box-sizing: border-box;
         }
 
-        .image {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
+        .column {
+        float: left;
+        width: 33.33%;
+        padding: 5px;
         }
 
-        .middle {
-        transition: .5s ease;
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
+        /* Clearfix (clear floats) */
+        .row::after {
+        content: "";
+        clear: both;
+        display: table;
         }
-
-        .container:hover .image {
-        opacity: 0.3;
-        }
-
-        .container:hover .middle {
-        opacity: 1;
-        }
-
-        .text {
-        background-color: #4CAF50;
-        color: white;
-        font-size: 16px;
-        padding: 16px 32px;
-        }
+    
     </style>
-  
 
     <!-- Optional JavaScript; choose one of the two! -->
 

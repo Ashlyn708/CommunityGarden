@@ -43,8 +43,12 @@
     <!--Gallery-->
     <div class="row">
         <div class="column">
-            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:100%">
+            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:100%"  onmouseover='$("#div_content").show();' onmouseout='$("#div_content").hide();' >
             <!-- Overlay-->
+            <center><div id="div_content" style='width:100px;height:100px;display:none;'><b>Name:</b><%= data.name %>
+            <br> <b>Description:</b> <%= data.description %> </br>
+            </div>
+            </center> 
         </div>
 
         <div class="column">

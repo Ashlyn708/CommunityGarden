@@ -28,10 +28,10 @@
       clear: both;
    }
    #popup {
-      width: 320px;
-      height: 300px;
+      width: 500px;
+      height: 570px;
       margin: 0 auto;
-      box-shadow: 1px 1px 1px 1px black;
+      box-shadow: 1px 1px 1px 1px rgb(97, 97, 97);
       display: none;
     }
     #popup iframe {

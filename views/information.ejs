@@ -43,32 +43,33 @@
     <!--Gallery-->
     <div class="row">
         <div class="column">
-            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:100%"  onmouseover='$("#div_content").show();' onmouseout='$("#div_content").hide();' >
+            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:50%; margin-left: 20%;" onmouseover='$("#div_content").show();' onmouseout='$("#div_content").hide();' >
             <!-- Overlay-->
-            <center><div id="div_content" style='width:100px;height:100px;display:none;'><b>Name:</b><%= data.name %>
+            <center><div id="div_content" style='display:none;'><b>Name:</b><%= data.name %>
             <br> <b>Description:</b> <%= data.description %> </br>
+             <br> <b>When to plant:</b> <%= data.when_to_plant %> </br>
             </div>
             </center> 
         </div>
 
         <div class="column">
-            <img src="/images/veg/lettuce.jpg" alt="Lettuce" style="width:100%">
+            <img src="/images/veg/lettuce.jpg" alt="Lettuce" style="width:50%; margin-left: auto; margin-right:auto;">
         </div>
 
         <div class="column">
-            <img src="/images/veg/cilantro.jpg" alt="Cilantro" style="width:100%">
+            <img src="/images/veg/cilantro.jpg" alt="Cilantro" style="width:50%; margin-right: 20%;">
         </div>
 
         <div class="column">
-            <img src="/images/veg/carrot.jpg" alt="Tomato" style="width:100%">
+            <img src="/images/veg/carrot.jpg" alt="carrot" style="width:50%; margin-left: 20%;">
         </div>
 
         <div class="column">
-            <img src="/images/veg/Broccoli.jpg" alt="Lettuce" style="width:100%">
+            <img src="/images/veg/Broccoli.jpg" alt="Lettuce" style="width:50%">
         </div>
 
         <div class="column">
-            <img src="/images/veg/bell_peppers.jpg" alt="Cilantro" style="width:100%">
+            <img src="/images/veg/bell_peppers.jpg" alt="Cilantro" style="width:50%; margin-right: 20%;">
         </div>
 
     </div>
@@ -90,6 +91,17 @@
         clear: both;
         display: table;
         }
+
+        #div_content{
+        position: absolute;
+        background-color: #fff8c2;
+        top: 80%;
+        left: 60%;
+        right:50%;
+        width: 30%;
+        height: absolute;
+        margin: -25% 0 0 -25%; /* should be -50% of width/height. */
+    }
     
     </style>
 

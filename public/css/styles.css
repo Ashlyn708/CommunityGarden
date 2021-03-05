@@ -1,4 +1,6 @@
-
+.jumdotron{
+   color: #ABC663;
+}
 
 
    .left, .right, .center {
@@ -13,6 +15,7 @@
       background-image: url("/images/Water.png");
       background-position: center;
       background-size: cover;
+      
    }
    .right {
       background-image: url("/images/CleanUp.png");
@@ -27,4 +30,18 @@
    .container:after {
       clear: both;
    }
+   #popup {
+      width: 500px;
+      height: 570px;
+      margin: 0 auto;
+      box-shadow: 1px 1px 1px 1px rgb(97, 97, 97);
+      display: none;
+    }
+    #popup iframe {
+      width: 100%;
+      height: 100%
+    }
 
+    .calendar{
+       background-color: cadetblue;
+    }

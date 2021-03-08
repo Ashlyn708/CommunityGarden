@@ -32,8 +32,8 @@
       clear: both;
    }
    #popup {
-      width: 500px;
-      height: 570px;
+      width: 670px;
+      height: 600px;
       margin: 0 auto;
       box-shadow: 1px 1px 1px 1px rgb(97, 97, 97);
       display: none;
@@ -44,5 +44,5 @@
     }
 
     .calendar{
-       background-color: cadetblue;
+        align-items: center;
     }

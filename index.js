@@ -91,8 +91,6 @@ app.get('/information', function(req, res){
 })
 
 
-
-
 //server setup
 app.listen(port, function(){
     console.log('Listening on ' + port)

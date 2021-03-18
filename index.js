@@ -78,16 +78,21 @@ app.post('/sendEmail', (req, res) => {
 
 //<<<<<<< AshleyBranch
 //information page
+let id = "";
 
 app.get('/information', function(req, res){
-    // tomatoe
-    let id = '1';
-    
+     if (crop.value == "Tomataoes") {
+        let id = "1";
+        }
+        
     fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
     .then(res => res.json())
     .then(data => {
         res.render('information', {data: data})
     });
+})
+app.post('/information', function(req, res){
+    res.redirect('/information');
 })
 
 

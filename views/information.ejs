@@ -42,73 +42,33 @@
              <p class="lead">Information</p>
         </div>
         
-    <!--Gallery-->
-    <div class="row">
-        <div class="column">
-            <img src="/images/veg/tomato.jpg" alt="Tomato" style="width:70%; margin-left: 30%;" onmouseover='$("#div_content").show();' onmouseout='$("#div_content").hide();' >
-            <!-- Overlay-->
-            <center><div id="div_content" style='display:none;'><b>Name:</b><%= data.name %>
-            <br> <b>Description:</b> <%= data.description %> </br>
-             <br> <b>When to plant:</b> <%= data.when_to_plant %> </br>
-            </div>
-            </center> 
-        </div>
+    <!-- Search Bar-->
+     <center><div class="container">
+        <h1>Choose Your Crop</h1>   
+        <form method='POST' action="/information" style="font-size:20px;">
+             <label for="crop">Crop</label>
+                 <select id="crop" name="crop">
+                        <option value="Tomataoes">Tomataoes</option>
+                        <option value="Basil">Basil</option>
+                        <option value="Lettuce">Lettuce</option>
+                        <option value="Carrots">Carrots</option>
+                        <option value="Asparagus">Asparagus</option>
+                        <option value="Beans">Beans</option>
+                        <option value="Beets">Beets</option>
+                        <option value="Broccoli">Broccoli</option>
+                        <option value="Brussels Sprouts">Brussels Sprouts</option>
+                        <option value="Cabbage">Cabbage</option>
+                        <option value="Cauliflower">Cauliflower</option>
+                        <option value="Celery">Celery</option>
+                        <option value="Chives">Chives</option>
+                        <option value="Collard Greens">Collard Greens</option>
+                        <option value="Cucumbers">Cucumbers</option>
+                        <option value="Sweet Corm">Sweet Corn</option>
+                        <option value="Eggplant">Eggplant</option>
+                    </select>
+            <input type="submit" value="Show Crop">
 
-        <div class="column">
-            <img src="/images/veg/lettuce.jpg" alt="Lettuce" style="width:70%; margin-left:17%;">
-            
-        </div>
-
-        <div class="column">
-            <img src="/images/veg/cilantro.jpg" alt="Cilantro" style="width:70%; margin-left:auto; margin-right: 30%;">
-        </div>
-
-        <div class="column">
-            <img src="/images/veg/carrot.jpg" alt="carrot" style="width:70%; margin-left: 30%; margin-right:auto;">
-        </div>
-
-        <div class="column">
-            <img src="/images/veg/Broccoli.jpg" alt="Broccoli" style="width:70%; margin-left:17%;">
-              <center><div id="div_content" style='display:none;'><b>Name:</b><%= data.name %>
-             <br> <b>Description:</b> <%= data.description %> </br>
-             <br> <b>When to plant:</b> <%= data.when_to_plant %> </br>
-             </div>
-            </center> 
-        </div>
-
-        <div class="column">
-            <img src="/images/veg/bell_peppers.jpg" alt="Cilantro" style="width:70%; margin-right:30%; margin-left:auto;">
-        </div>
-
-    </div>
-
-    <style>
-        * {
-        box-sizing: border-box;
-        }
-
-        .column {
-        float: left;
-        width: 33.33%;
-        padding: 5px;
-        }
-
-        /* Clearfix (clear floats) */
-        .row::after {
-        content: "";
-        clear: both;
-        display: table;
-        }
-
-        #div_content{
-        position: absolute;
-        background-color: #fff8c2;
-        width: 50%;
-        height: absolute;
-        left:27%;
-        top:60%;
-    }
-    
+        
     </style>
 
     <!-- Optional JavaScript; choose one of the two! -->

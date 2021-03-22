@@ -67,9 +67,15 @@
                         <option value="Eggplant">Eggplant</option>
                     </select>
             <input type="submit" value="Show Crop">
-
+            
+            <script>
+                const select = document.getElementById('crop');
+                const selectedOption = [...select.options].find(option => option.selected).text;    
+            </script>
         
     </style>
+
+    <%= data.name%>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

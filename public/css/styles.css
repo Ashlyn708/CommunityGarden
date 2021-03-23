@@ -67,9 +67,9 @@
   background: url('../images/fillerPic.png');
   background-size: cover;
   background-position: center;
+}
 
 .column{
-    background-color: #7895A4;
     background-position: 300px 100px;
 
 }

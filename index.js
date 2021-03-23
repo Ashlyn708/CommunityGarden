@@ -81,13 +81,7 @@ app.post('/sendEmail', (req, res) => {
 const selectedOption =  "";
 let id = "";
 
-app.get('/information', function(req, res){
-     
-   if (selectedOption == "Tomatoes")
-{
-     id = "1";
-}
-         
+app.get('/information', function(req, res){      
     fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)
     .then(res => res.json())
     .then(data => {
@@ -98,7 +92,6 @@ app.post('/information', function(req, res){
     id = req.body.selectedOption;
     res.redirect('/information');
 })
-
 
 //server setup
 app.listen(port, function(){

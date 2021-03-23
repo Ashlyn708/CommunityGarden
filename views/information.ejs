@@ -46,36 +46,43 @@
      <center><div class="container">
         <h1>Choose Your Crop</h1>   
         <form method='POST' action="/information" style="font-size:20px;">
-             <label for="crop">Crop</label>
-                 <select id="crop" name="crop">
-                        <option value="Tomataoes">Tomataoes</option>
-                        <option value="Basil">Basil</option>
-                        <option value="Lettuce">Lettuce</option>
-                        <option value="Carrots">Carrots</option>
-                        <option value="Asparagus">Asparagus</option>
-                        <option value="Beans">Beans</option>
-                        <option value="Beets">Beets</option>
-                        <option value="Broccoli">Broccoli</option>
-                        <option value="Brussels Sprouts">Brussels Sprouts</option>
-                        <option value="Cabbage">Cabbage</option>
-                        <option value="Cauliflower">Cauliflower</option>
-                        <option value="Celery">Celery</option>
-                        <option value="Chives">Chives</option>
-                        <option value="Collard Greens">Collard Greens</option>
-                        <option value="Cucumbers">Cucumbers</option>
-                        <option value="Sweet Corm">Sweet Corn</option>
-                        <option value="Eggplant">Eggplant</option>
+             <label for="selectedOption">Crop</label>
+                 <select id="selectedOption" name="selectedOption">
+                        <option value="1">Tomataoes</option>
+                        <option value="2">Basil</option>
+                        <option value="3">Lettuce</option>
+                        <option value="4">Carrots</option>
+                        <option value="5">Asparagus</option>
+                        <option value="6">Beans</option>
+                        <option value="7">Beets</option>
+                        <option value="8">Broccoli</option>
+                        <option value="9">Brussels Sprouts</option>
+                        <option value="10">Cabbage</option>
+                        <option value="11">Cauliflower</option>
+                        <option value="12">Celery</option>
+                        <option value="13">Chives</option>
+                        <option value="14">Collard Greens</option>
+                        <option value="15">Cucumbers</option>
+                        <option value="16">Sweet Corn</option>
+                        <option value="17">Eggplant</option>
                     </select>
             <input type="submit" value="Show Crop">
-            
-            <script>
-                const select = document.getElementById('crop');
-                const selectedOption = [...select.options].find(option => option.selected).text;    
-            </script>
-        
     </style>
 
-    <%= data.name%>
+    <!--Displayin Information-->
+    <div class = "displayInfo">
+        <h1 class="plantName"> <%=data.name %> </h1>
+        <p class = "image" alt = "Image of Plant"><%=data.image_url%></p> 
+        <p class="plantDescription"> <%=data.description %> </p>
+        <p class = "os"> <b>Sun </b> : <%=data.optimal_sun %> </p>
+        <p class = "soilo"> <b>Soil</b> : <%=data.optimal_soil %> </p>
+        <p class = "seed"> <b>From the Seed</b> : <%=data.growing_from_seed %> </p>
+        <p class = "wtp"> <b>When to Plant</b> : <%=data.when_to_plant %> </p>
+        <p class = "space"> <b>Spacing</b> : <%=data.spacing %> </p>
+        <p class = "water"> <b>Watering</b> : <%=data.watering %> </p>
+        <p class = "feed"> <b>Feed</b> : <%=data.feeding %> </p>
+        <p class = "Harvesting"> <b>Harvesting</b> : <%=data.harvesting %> </p>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

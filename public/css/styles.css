@@ -3,13 +3,16 @@
    color: white;
 }
 
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+
 
    .left, .right, .center {
       float: left;
-      width: 33%;
+      width: 300px;
       color: white;
       padding: 10px;
-      height: 500px;
+      height: 350px;
       text-align: center;
    }
    .left {

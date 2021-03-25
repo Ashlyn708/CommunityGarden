@@ -65,6 +65,34 @@
                         <option value="15">Cucumbers</option>
                         <option value="16">Sweet Corn</option>
                         <option value="17">Eggplant</option>
+                        <option value="18">Onion</option>
+                        <option value="19">Garlic</option>
+                        <option value="20">Kale</option>
+                        <option value="21">Cantaloupe</option>
+                        <option value="22">Parsnips</option>
+                        <option value="23">Peas</option>
+                        <option value="24">Bell Pepepr</option>
+                        <option value="25">Potatoes</option>
+                        <option value="26">Pumpkin</option>
+                        <option value="27">Radish</option>
+                        <option value="28">Rhubarb</option>
+                        <option value="29">Spinach</option>
+                        <option value="30">Summer Squash</option>
+                        <option value="31">Swiss Chard</option>
+                        <option value="32">Turnip</option>
+                        <option value="33">Watermelon</option>
+                        <option value="34">Winter Squash</option>
+                        <option value="35">Thyme</option>
+                        <option value="36">Oregano</option>
+                        <option value="37">Rosemary</option>
+                        <option value="38">Cilantro</option>
+                        <option value="39">Parsley</option>
+                        <option value="40">Mint</option>
+                        <option value="41">Sage</option>
+                        <option value="42">Tarragon</option>
+                        <option value="43">Okra</option>
+                        <option value="44">Sweet Potato</option>
+                        <option value="45">Dill</option>
                     </select>
             <input type="submit" value="Show Crop">
     </style>
@@ -72,7 +100,7 @@
     <!--Displayin Information-->
     <div class = "displayInfo">
         <h1 class="plantName"> <%=data.name %> </h1>
-        <p class = "image" alt = "Image of Plant"><%=data.image_url%></p> 
+        <img class ="image" src="https://res-4.cloudinary.com/do6bw42am/image/upload/c_scale,f_auto,h_300/v1/<%=data.image_url%>" alt = "Image of Plant"></img>
         <p class="plantDescription"> <%=data.description %> </p>
         <p class = "os"> <b>Sun </b> : <%=data.optimal_sun %> </p>
         <p class = "soilo"> <b>Soil</b> : <%=data.optimal_soil %> </p>

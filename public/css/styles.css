@@ -3,10 +3,6 @@
    color: white;
 }
 
-.item2 { grid-area: menu; }
-.item3 { grid-area: main; }
-
-
    .left, .right, .center {
       float: left;
       width: 300px;

@@ -79,7 +79,7 @@ app.post('/sendEmail', (req, res) => {
 //<<<<<<< AshleyBranch
 //information page
 const selectedOption =  "";
-let id = "";
+let id = "1";
 
 app.get('/information', function(req, res){      
     fetch('http://harvesthelper.herokuapp.com/api/v1/plants/'+ id+ '?api_key=2f73e248712316f4c8935ca1028b7c0b',)

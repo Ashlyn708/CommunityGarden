@@ -46,8 +46,8 @@
      <center><div class="container">
         <h1>Choose Your Crop</h1>   
         <form method='POST' action="/information" style="font-size:20px;">
-             <label for="selectedOption">Crop</label>
                  <select id="selectedOption" name="selectedOption">
+                        <option value="" hidden>Select Your Crop</option>
                         <option value="1">Tomataoes</option>
                         <option value="2">Basil</option>
                         <option value="3">Lettuce</option>
@@ -94,14 +94,14 @@
                         <option value="44">Sweet Potato</option>
                         <option value="45">Dill</option>
                     </select>
-            <input type="submit" value="Show Crop">
+            <input  style=" color:#7895A4" type="submit" value="Show Crop"> 
     </style>
 
     <!--Displayin Information-->
     <div class = "displayInfo">
         <h1 class="plantName"> <%=data.name %> </h1>
         <img class ="image" src="https://res-4.cloudinary.com/do6bw42am/image/upload/c_scale,f_auto,h_300/v1/<%=data.image_url%>" alt = "Image of Plant"></img>
-        <p class="plantDescription"> <%=data.description %> </p>
+        <p class="plantDescription"> <b><%=data.description %> </b> </p>
         <p class = "os"> <b>Sun </b> : <%=data.optimal_sun %> </p>
         <p class = "soilo"> <b>Soil</b> : <%=data.optimal_soil %> </p>
         <p class = "seed"> <b>From the Seed</b> : <%=data.growing_from_seed %> </p>

@@ -6,26 +6,9 @@
    .left, .right, .center {
       float: left;
       width: 300px;
-      color: white;
       padding: 10px;
       height: 350px;
       text-align: center;
-   }
-   .left {
-      background-image: url("/images/Water.png");
-      background-position: center;
-      background-size: cover;
-      
-   }
-   .right {
-      background-image: url("/images/CleanUp.png");
-      background-position: center;
-      background-size: cover;
-   }
-   .center {
-      background-image: url("/images/Maintinance.png");
-      background-position: center;
-      background-size: cover;
    }
    .container:after {
       clear: both;

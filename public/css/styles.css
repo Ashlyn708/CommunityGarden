@@ -10,18 +10,7 @@
       height: 350px;
       text-align: center;
    }
-   .left1{
-       background-image: url("images/CleanUp.png");
-       
-   }
-   .left2{
-       background-image: url("/public/images/CleanUp.png");
-       
-   }
-   .left3{
-       background-image: url("/public/images/CleanUp.png");
-       
-   }
+   
    .container:after {
       clear: both;
    }

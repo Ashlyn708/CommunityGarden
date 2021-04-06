@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 //require node-fetch
 var fetch = require('node-fetch');
 // require mongodb
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
 //create express object, call express
 var app = express();
 

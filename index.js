@@ -92,39 +92,39 @@ app.get('/contact', function(req, res){
     res.render('contact',  { sent: sent });
 });
 
-app.post('/sendEmail', (req, res) => {});
+app.post('/sendEmail', (req, res) => {
     //intall the SMTP server
-    //const smtpTrans = nodemailer.createTransport({
-      //  service: 'Gmail',
-        //auth: {
-          //  user: 'projectgarden706@gmail.com', 
-            //pass: 'GardenProject5!'
-        //},
-        //tls: {
-          //  rejectUnauthorized: false
-        //}
-    //})
-    //var user = req.body.email;
-    //var message = req.body.message;
+    const smtpTrans = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'projectgarden706@gmail.com', 
+            pass: 'GardenProject5!'
+        },
+        tls: {
+            rejectUnauthorized: false
+        }
+    })
+    var user = req.body.email;
+    var message = req.body.message;
     //specify what the email will look like
-    //const mailOpts = {
-      //  from: user,
-        //to: 'projectgarden706@gmail.com',
-        //subject: 'You have a new message from Community Garden Website',
-        //text: user + ' wrote: ' + message
-    //}
+    const mailOpts = {
+        from: user,
+        to: 'projectgarden706@gmail.com',
+        subject: 'You have a new message from Community Garden Website',
+        text: user + ' wrote: ' + message
+    }
 
-    //smtpTrans.sendMail(mailOpts, function (err, res) {
-      //  if (err) {
-        //    console.error('there was an error: ', err);
-        //}
-        //else {
-          //  console.log("Message was sent!");
-            //sent = true;
-        //}
-    //})
-    //res.redirect('/contact');
-//});
+    smtpTrans.sendMail(mailOpts, function (err, res) {
+        if (err) {
+            console.error('there was an error: ', err);
+        }
+        else {
+            console.log("Message was sent!");
+            sent = true;
+        }
+    })
+    res.redirect('/contact');
+});
 
 
 //<<<<<<< AshleyBranch

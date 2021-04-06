@@ -6,9 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/flatly/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="build/css/bootstrap-datetimepicker.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
   <link rel= "stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+
     <link href="css/styles.css" rel="stylesheet">
     <title>Community Garden</title>
         </head>
@@ -82,7 +89,7 @@
      showguides="true"
      inkscape:guide-bbox="true" />
   <title
-     id="title130">FinalImage3</title>
+     id="title130"></title>
   <defs
      id="defs2" />
   <metadata
@@ -93,7 +100,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>FinalImage3</dc:title>
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -125,7 +132,7 @@
      id="plot2"
      data-toggle="modal"
      data-target="#modalForm"
-     data-plot="plot 2"
+     data-whatever="plot 2"
      width="10.519287"
      height="11.336984"
      x="55.436794"
@@ -1407,46 +1414,47 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="plotnumber">Plot Number</label>
-  <input class="form-control" id="plotnumber" type="text" placeholder=" " readonly>
-  </div>
-  <div class="form-group">
-    <label for="chosenCrop">Plant you are growing</label>
-    <textarea class="form-control" id="chosenCrop" rows="1"></textarea>
-  </div>
-  <div class="input-group date" id="datetimepicker1">
-    <label for="picker">Choose your date</label>
-  <input type="text" id="picker" class="form-control">
-  <span class="input-group-addon">
-    <span class="glyphicon glyphicon-calendar"></span>
-    </span>
-</div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="subbtn" type="submit" data-dismiss="modal" class="btn btn-primary">submit</button>
-      </form>
-      </div>
+        <form action= "/cropForm" method="POST">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="personEmail">Email address</label>
+                    <input type="email" class="form-control" name="personEmail" id="personEmail" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="plotnumber">Plot Number</label>
+                    <input class="form-control" id="plotnumber" name="plotnumber" type="text" placeholder=" " readonly>
+                </div>
+                <div class="form-group">
+                    <label for="chosenCrop">Plant you are growing</label>
+                    <textarea class="form-control" name="chosenCrop" id="chosenCrop" rows="1"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="datetimepicker1">Date and Time</label>
+                        <input type="text" name="datetimepicker1" class="form-control" id="datetimepicker1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="subbtn"  onsubmint="changeColor()" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+
     </div>
   </div>
 </div>
                 </div>    
         <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js" type="text/javascript"></script>
+    <script src="build/js/bootstrap-datetimepicker.min.js"></script>
+   
     <script>
         $('#modalForm').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
@@ -1462,6 +1470,11 @@
         });
 
     
+        
+        function changeColor(){
+        document.getElementbyId('plot1').onSumbitEffect();
+    };
+
     </script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

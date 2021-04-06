@@ -3,31 +3,14 @@
    color: white;
 }
 
-
    .left, .right, .center {
       float: left;
-      width: 33%;
-      color: white;
+      width: 300px;
       padding: 10px;
-      height: 500px;
+      height: 350px;
       text-align: center;
    }
-   .left {
-      background-image: url("/images/Water.png");
-      background-position: center;
-      background-size: cover;
-      
-   }
-   .right {
-      background-image: url("/images/CleanUp.png");
-      background-position: center;
-      background-size: cover;
-   }
-   .center {
-      background-image: url("/images/Maintinance.png");
-      background-position: center;
-      background-size: cover;
-   }
+   
    .container:after {
       clear: both;
    }
@@ -49,7 +32,27 @@
    }
 
 
+.column-2 {
+  float: left;
+  width: 45%;
+  padding: 40px;
+  padding-left:70px;
+  padding-right: 70px;
+  height: 475px;
+  margin:30px;
+  margin-right:30px;
+  margin-bottom: 70px;
+  background-color: #FFF8C2;
+  line-height:2;
+}
+
+.large-profile {
+  background: url('../images/fillerPic.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .column{
-    background-color: #7895A4;
     background-position: 300px 100px;
+
 }

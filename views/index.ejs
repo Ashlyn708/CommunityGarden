@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/flatly/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="build/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
     <title>Community Garden</title>
         </head>
@@ -84,7 +85,7 @@
      showguides="true"
      inkscape:guide-bbox="true" />
   <title
-     id="title130">FinalImage3</title>
+     id="title130"></title>
   <defs
      id="defs2" />
   <metadata
@@ -95,7 +96,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>FinalImage3</dc:title>
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -127,7 +128,7 @@
      id="plot2"
      data-toggle="modal"
      data-target="#modalForm"
-     data-plot="plot 2"
+     data-whatever="plot 2"
      width="10.519287"
      height="11.336984"
      x="55.436794"
@@ -1409,33 +1410,33 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="plotnumber">Plot Number</label>
-  <input class="form-control" id="plotnumber" type="text" placeholder=" " readonly>
-  </div>
-  <div class="form-group">
-    <label for="chosenCrop">Plant you are growing</label>
-    <textarea class="form-control" id="chosenCrop" rows="1"></textarea>
-  </div>
- <div class="row">
-        <div class="col-sm-6">
-            <label for="datetimepicker1">Date and Time</label>
-            <input type="text" class="form-control" id="datetimepicker1">
-        </div>
+        <form action= "/cropForm" method="POST">
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="personEmail">Email address</label>
+                    <input type="email" class="form-control" name="personEmail" id="personEmail" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="plotnumber">Plot Number</label>
+                    <input class="form-control" id="plotnumber" name="plotnumber" type="text" placeholder=" " readonly>
+                </div>
+                <div class="form-group">
+                    <label for="chosenCrop">Plant you are growing</label>
+                    <textarea class="form-control" name="chosenCrop" id="chosenCrop" rows="1"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label for="datetimepicker1">Date and Time</label>
+                        <input type="text" name="datetimepicker1" class="form-control" id="datetimepicker1">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="subbtn"  onsubmint="changeColor()" type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
 
-    </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button id="subbtn" type="submit" data-dismiss="modal" class="btn btn-primary">submit</button>
-      </form>
-      </div>
     </div>
   </div>
 </div>
@@ -1465,6 +1466,11 @@
         });
 
     
+        
+        function changeColor(){
+        document.getElementbyId('plot1').onSumbitEffect();
+    };
+
     </script>
     <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

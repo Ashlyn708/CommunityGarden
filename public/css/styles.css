@@ -18,7 +18,6 @@
       width: 670px;
       height: 600px;
       margin: 0 auto;
-      box-shadow: 1px 1px 1px 1px rgb(97, 97, 97);
       display: none;
     }
     #popup iframe {

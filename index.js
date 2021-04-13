@@ -7,7 +7,18 @@ var fetch = require('node-fetch');
 // require mongodb
 var mongoose = require('mongoose');
 // require sendmail
-const sendmail = require('sendmail')();
+const sendmail = require('sendmail')({
+    logger: {
+    debug: console.log,
+    info: console.info,
+    warn: console.warn,
+    error: console.error
+  },
+  silent: false,
+  smtpPort: 25, // Default: 25
+  smtpHost: 'localhost' // Default: -1 - extra smtp host after resolveMX
+
+});
 //create express object, call express
 var app = express();
 
@@ -35,11 +46,11 @@ let db =  mongoose.connection;
 db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 
 
-var usedPlots = ['plot3','plot4','plot8','plot10'];
 
 
 //home page
 app.get('/',function(req,res){
+    var usedPlots=['plot3','plot44']
     //gardenPlot.find(function(err, todo){
         //if(err){
             //console.log(err);
@@ -67,7 +78,7 @@ app.post('/cropForm',(req,res)=>{
     var date= req.body.datetimepicker1;
     //specify what the email will look like
     sendmail({
-    from: 'anaverett@gmail.com',
+    from: 'projectgarden706@gmail.com',
     to: user,
     subject: 'test sendmail Garden',
     html: 'Thank you for renting a plot at the community garden '+user+'. You have selected to plant '+crop+' in ' + plot+ ' on '+date+'.',

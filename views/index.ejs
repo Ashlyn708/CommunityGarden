@@ -1471,15 +1471,11 @@
     </script>
 
 
-        <% if(usedPlots){ %>      
+        <% for(var i=0; i < usedPlots.length; i++) { %>
             <script>
-                for(var i=0; i < usedPlots.length; i++){
-                    console.log(i)
                 var svgElement = document.getElementById('<%=usedPlots[i]%>');
-                svgElement.classList.add('plot-used');  
-                }
-            </script>
-            
+                svgElement.classList.add('plot-used'); 
+            </script> 
         <% } %>
     
 

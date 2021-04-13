@@ -6,6 +6,8 @@ var bodyParser = require("body-parser");
 var fetch = require('node-fetch');
 // require mongodb
 var mongoose = require('mongoose');
+// require sendmail
+const sendmail = require('sendmail')();
 //create express object, call express
 var app = express();
 
@@ -52,43 +54,27 @@ app.get('/',function(req,res){
            // }
       //  }
     //})
+    console.log(usedPlots);
     res.render('index',{usedPlots:usedPlots})
 });
 
 app.post('/cropForm',(req,res)=>{
     //intall the SMTP server
     console.log("form sent");
-    const smtpTrans = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'projectgarden706@gmail.com', 
-            pass: 'GardenProject5!'
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    })
     var user = req.body.personEmail;
-    var plot = req.body.plotNumber;
+    var plot = req.body.plotnumber;
     var crop= req.body.chosenCrop;
     var date= req.body.datetimepicker1;
     //specify what the email will look like
-    const mailOpts = {
-        from: user,
-        to: 'projectgarden706@gmail.com',
-        subject: 'You have a new message from Community Garden Website',
-        text: user + ' reserved '+ plot + ' and will be planting'+ crop + ' on '+ date + '.'
-    }
-
-    smtpTrans.sendMail(mailOpts, function (err, res) {
-        if (err) {
-            console.error('there was an error: ', err);
-        }
-        else {
-            console.log("Message was sent!");
-            sent = true;
-        }
-    })
+    sendmail({
+    from: 'anaverett@gmail.com',
+    to: user,
+    subject: 'test sendmail Garden',
+    html: 'Thank you for renting a plot at the community garden '+user+'. You have selected to plant '+crop+' in ' + plot+ ' on '+date+'.',
+  }, function(err, reply) {
+    console.log(err && err.stack);
+    console.dir(reply);
+});
     res.redirect('/');
 });
 

@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 //require node-fetch
 var fetch = require('node-fetch');
 // require mongodb
-//const MongoClient = require('mongodb').MongoClient;
+var mongoose = require('mongoose');
 //create express object, call express
 var app = express();
 
@@ -23,24 +23,36 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
+const gardenPlot = require('./models/gardenPlot.model')
+const mongoDB ="mongodb+srv://Gardener:Nicole708@cluster2.rkbio.mongodb.net/Plots?retryWrites=true&w=majority";
+mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
+console.log('Read mongoose connect line');
+mongoose.Promise = global.Promise;
+console.log('read mongoose promise line');
+let db =  mongoose.connection;
+db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 
-//const uri = "mongodb+srv://Gardener:GardenerPassword@cluster2.rkbio.mongodb.net/plots?retryWrites=true&w=majority";
-//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//client.connect(err => {
-  //const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  //client.close();
-//});
 
-
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
-
+var usedPlots = ['plot3','plot4','plot8','plot10'];
 
 
 //home page
 app.get('/',function(req,res){
-    res.render('index');
+    //gardenPlot.find(function(err, todo){
+        //if(err){
+            //console.log(err);
+        //}
+        //else{
+            //usedPlots = []
+            //for(i = 0; i < gardenPlots.length; i++){
+                //if(gardenPlots[i].used){
+                   // usedPlots.push(gardenPlots[i])
+                    //console.log(gardenPlots[i].name)
+               // }
+           // }
+      //  }
+    //})
+    res.render('index',{usedPlots:usedPlots})
 });
 
 app.post('/cropForm',(req,res)=>{

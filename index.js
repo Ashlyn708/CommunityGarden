@@ -71,21 +71,36 @@ app.get('/',function(req,res){
 
 app.post('/cropForm',(req,res)=>{
     //intall the SMTP server
+    
     console.log("form sent");
-    var user = req.body.personEmail;
-    var plot = req.body.plotnumber;
-    var crop= req.body.chosenCrop;
-    var date= req.body.datetimepicker1;
-    //specify what the email will look like
-    sendmail({
-    from: 'projectgarden706@gmail.com',
-    to: user,
-    subject: 'test sendmail Garden',
-    html: 'Thank you for renting a plot at the community garden '+user+'. You have selected to plant '+crop+' in ' + plot+ ' on '+date+'.',
-  }, function(err, reply) {
-    console.log(err && err.stack);
-    console.dir(reply);
+   
+   var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'projectgarden706@gmail.com',
+    pass: 'ProjectGarden5!'
+  }
 });
+var renter = req.body.personEmail;
+var plot = req.body.plotnumber;
+var crop= req.body.chosenCrop;
+var date= req.body.datetimepicker1;
+var mailOptions = {
+  from: 'projectgarden706@gmail.com',
+  to: renter,
+  subject: 'Your plot from the Community Garden',
+  text: 'Thank you for renting a plot at the community garden '+renter+'. You have selected to plant '+crop+' in ' + plot+ ' on '+date+'.',
+  // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
+};
+console.log(mailOptions)
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
     res.redirect('/');
 });
 

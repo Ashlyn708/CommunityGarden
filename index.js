@@ -6,19 +6,6 @@ var bodyParser = require("body-parser");
 var fetch = require('node-fetch');
 // require mongodb
 var mongoose = require('mongoose');
-// require sendmail
-const sendmail = require('sendmail')({
-    logger: {
-    debug: console.log,
-    info: console.info,
-    warn: console.warn,
-    error: console.error
-  },
-  silent: false,
-  smtpPort: 25, // Default: 25
-  smtpHost: 'localhost' // Default: -1 - extra smtp host after resolveMX
-
-});
 //create express object, call express
 var app = express();
 
@@ -36,7 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-const gardenPlot = require('./models/gardenPlot.model')
+const GardenPlot = require('./models/gardenPlot.model')
 const mongoDB ="mongodb+srv://Gardener:Nicole708@cluster2.rkbio.mongodb.net/Plots?retryWrites=true&w=majority";
 mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
 console.log('Read mongoose connect line');
@@ -50,22 +37,26 @@ db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 
 //home page
 app.get('/',function(req,res){
-    var usedPlots=['plot3','plot44']
-    //gardenPlot.find(function(err, todo){
-        //if(err){
-            //console.log(err);
-        //}
-        //else{
-            //usedPlots = []
-            //for(i = 0; i < gardenPlots.length; i++){
-                //if(gardenPlots[i].used){
-                   // usedPlots.push(gardenPlots[i])
-                    //console.log(gardenPlots[i].name)
-               // }
-           // }
-      //  }
-    //})
-    console.log(usedPlots);
+    //var usedPlots=['plot3','plot44']
+    var usedPlots = []
+    GardenPlot.find(function(err, gardenPlot){
+       if(err){
+            console.log(err);
+        }
+        else{
+            console.log("i am outside of the loop")
+            console.log(gardenPlot)
+            for(i = 0 ; i < gardenPlot.length ; i++){
+              console.log("i made it in the loop")
+                if(gardenPlot[i].used){
+                    usedPlots.push(gardenPlot[i])
+                    console.log(gardenPlot[i])
+                }
+            }
+        }
+    })
+
+    //console.log(usedPlots);
     res.render('index',{usedPlots:usedPlots})
 });
 
@@ -78,18 +69,18 @@ app.post('/cropForm',(req,res)=>{
   service: 'gmail',
   auth: {
     user: 'projectgarden706@gmail.com',
-    pass: 'ProjectGarden5!'
+    pass: 'GardenProject123!'
   }
 });
-var renter = req.body.personEmail;
-var plot = req.body.plotnumber;
-var crop= req.body.chosenCrop;
-var date= req.body.datetimepicker1;
+var Vrenter = req.body.personEmail;
+var Vplot = req.body.plotnumber;
+var Vcrop= req.body.chosenCrop;
+var Vdate= req.body.datetimepicker1;
 var mailOptions = {
   from: 'projectgarden706@gmail.com',
-  to: renter,
+  to: Vrenter,
   subject: 'Your plot from the Community Garden',
-  text: 'Thank you for renting a plot at the community garden '+renter+'. You have selected to plant '+crop+' in ' + plot+ ' on '+date+'.',
+  text: 'Thank you for renting a plot at the community garden '+Vrenter+'. You have selected to plant '+Vcrop+' in ' + Vplot+ ' on '+Vdate+'.',
   // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
 };
 console.log(mailOptions)
@@ -100,7 +91,12 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 });
-
+    //const plotName = {name: Vplot}
+    //GardenPlot.findOneAndUpdate(plotName,{renter:Vrenter})
+    //GardenPlot.findOneAndUpdate(plotName,{crop:Vcrop})
+    //GardenPlot.findOneAndUpdate(plotName,{date:Vdate})
+    //GardenPlot.findOneAndUpdate(plotName,{used:true})
+    
     res.redirect('/');
 });
 
@@ -122,7 +118,7 @@ app.post('/sendEmail', (req, res) => {
         service: 'Gmail',
         auth: {
             user: 'projectgarden706@gmail.com', 
-            pass: 'GardenProject5!'
+            pass: 'GardenProject123!'
         },
         tls: {
             rejectUnauthorized: false

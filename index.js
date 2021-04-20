@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-const GardenPlot = require('./models/gardenPlot.model')
-const mongoDB ="mongodb+srv://Gardener:Nicole708@cluster2.rkbio.mongodb.net/Plots?retryWrites=true&w=majority";
+const Plot = require('./models/plot.model')
+const mongoDB ="mongodb+srv://Owner:GardenProject123@cluster0.934ij.mongodb.net/plotlist?retryWrites=true&w=majority";
 mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
 console.log('Read mongoose connect line');
 mongoose.Promise = global.Promise;
@@ -34,30 +34,31 @@ db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 
 
 
+    
 
 //home page
 app.get('/',function(req,res){
-    //var usedPlots=['plot3','plot44']
-    var usedPlots = []
-    GardenPlot.find(function(err, gardenPlot){
+    var usedPlots = [];
+    Plot.find(function(err, plots){
        if(err){
             console.log(err);
         }
         else{
-            console.log("i am outside of the loop")
-            console.log(gardenPlot)
-            for(i = 0 ; i < gardenPlot.length ; i++){
-              console.log("i made it in the loop")
-                if(gardenPlot[i].used){
-                    usedPlots.push(gardenPlot[i])
-                    console.log(gardenPlot[i])
+            //usedPlots = [];
+            //console.log("i am outside of the loop")
+            //console.log(plots)
+            for(i = 0 ; i < plots.length ; i++){
+              //console.log("i made it in the loop")
+                if(plots[i].used){
+                    usedPlots.push(plots[i].svgID)
+                    console.log(plots[i].svgID)
                 }
             }
         }
-    })
+        res.render('index',{usedPlots:usedPlots});
+        //console.log(usedPlots);
 
-    //console.log(usedPlots);
-    res.render('index',{usedPlots:usedPlots})
+});
 });
 
 app.post('/cropForm',(req,res)=>{
@@ -91,13 +92,26 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 });
-    //const plotName = {name: Vplot}
-    //GardenPlot.findOneAndUpdate(plotName,{renter:Vrenter})
-    //GardenPlot.findOneAndUpdate(plotName,{crop:Vcrop})
-    //GardenPlot.findOneAndUpdate(plotName,{date:Vdate})
-    //GardenPlot.findOneAndUpdate(plotName,{used:true})
-    
-    res.redirect('/');
+    // Find the document that describes "lego"
+const query = { "name": Vplot };
+// Set some fields in that document
+const update = {
+  "$set": {
+    "renter": Vrenter,
+    "crop": Vcrop,
+    "date": Vdate,
+    "used": true,
+  }
+};
+// Return the updated document instead of the original document
+const options = { returnNewDocument: true };
+
+return Plot.findOneAndUpdate(query, update, options)
+  .then(updatedDocument => {
+      res.redirect('/');
+    return updatedDocument
+  })
+  .catch(err => console.error(`Failed to find and update document: ${err}`))
 });
 
 //volunteer page

@@ -5,7 +5,7 @@ var bodyParser = require("body-parser");
 //require node-fetch
 var fetch = require('node-fetch');
 // require mongodb
-//const MongoClient = require('mongodb').MongoClient;
+var mongoose = require('mongoose');
 //create express object, call express
 var app = express();
 
@@ -23,61 +23,95 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-
-//const uri = "mongodb+srv://Gardener:GardenerPassword@cluster2.rkbio.mongodb.net/plots?retryWrites=true&w=majority";
-//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-//client.connect(err => {
-  //const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  //client.close();
-//});
-
-
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
+const Plot = require('./models/plot.model')
+const mongoDB ="mongodb+srv://Owner:GardenProject123@cluster0.934ij.mongodb.net/plotlist?retryWrites=true&w=majority";
+mongoose.connect(mongoDB,{useNewUrlParser: true, useUnifiedTopology: true});
+console.log('Read mongoose connect line');
+mongoose.Promise = global.Promise;
+console.log('read mongoose promise line');
+let db =  mongoose.connection;
+db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 
 
+
+    
 
 //home page
 app.get('/',function(req,res){
-    res.render('index');
+    var usedPlots = [];
+    Plot.find(function(err, plots){
+       if(err){
+            console.log(err);
+        }
+        else{
+            //usedPlots = [];
+            //console.log("i am outside of the loop")
+            //console.log(plots)
+            for(i = 0 ; i < plots.length ; i++){
+              //console.log("i made it in the loop")
+                if(plots[i].used){
+                    usedPlots.push(plots[i].svgID)
+                    console.log(plots[i].svgID)
+                }
+            }
+        }
+        res.render('index',{usedPlots:usedPlots});
+        //console.log(usedPlots);
+
+});
 });
 
 app.post('/cropForm',(req,res)=>{
     //intall the SMTP server
+    
     console.log("form sent");
-    const smtpTrans = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: 'projectgarden706@gmail.com', 
-            pass: 'GardenProject5!'
-        },
-        tls: {
-            rejectUnauthorized: false
-        }
-    })
-    var user = req.body.personEmail;
-    var plot = req.body.plotNumber;
-    var crop= req.body.chosenCrop;
-    var date= req.body.datetimepicker1;
-    //specify what the email will look like
-    const mailOpts = {
-        from: user,
-        to: 'projectgarden706@gmail.com',
-        subject: 'You have a new message from Community Garden Website',
-        text: user + ' reserved '+ plot + ' and will be planting'+ crop + ' on '+ date + '.'
-    }
+   
+   var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'projectgarden706@gmail.com',
+    pass: 'GardenProject123!'
+  }
+});
+var Vrenter = req.body.personEmail;
+var Vplot = req.body.plotnumber;
+var Vcrop= req.body.chosenCrop;
+var Vdate= req.body.datetimepicker1;
+var mailOptions = {
+  from: 'projectgarden706@gmail.com',
+  to: Vrenter,
+  subject: 'Your plot from the Community Garden',
+  text: 'Thank you for renting a plot at the community garden '+Vrenter+'. You have selected to plant '+Vcrop+' in ' + Vplot+ ' on '+Vdate+'.',
+  // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
+};
+console.log(mailOptions)
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+    // Find the document that describes "lego"
+const query = { "name": Vplot };
+// Set some fields in that document
+const update = {
+  "$set": {
+    "renter": Vrenter,
+    "crop": Vcrop,
+    "date": Vdate,
+    "used": true,
+  }
+};
+// Return the updated document instead of the original document
+const options = { returnNewDocument: true };
 
-    smtpTrans.sendMail(mailOpts, function (err, res) {
-        if (err) {
-            console.error('there was an error: ', err);
-        }
-        else {
-            console.log("Message was sent!");
-            sent = true;
-        }
-    })
-    res.redirect('/');
+return Plot.findOneAndUpdate(query, update, options)
+  .then(updatedDocument => {
+      res.redirect('/');
+    return updatedDocument
+  })
+  .catch(err => console.error(`Failed to find and update document: ${err}`))
 });
 
 //volunteer page
@@ -98,7 +132,7 @@ app.post('/sendEmail', (req, res) => {
         service: 'Gmail',
         auth: {
             user: 'projectgarden706@gmail.com', 
-            pass: 'GardenProject5!'
+            pass: 'GardenProject123!'
         },
         tls: {
             rejectUnauthorized: false

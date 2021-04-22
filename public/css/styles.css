@@ -1,3 +1,7 @@
+.volunteerWrap{
+    position: absolute;
+}
+
 .jumbotron{
    background-color: #ABC663;
    color: white;

@@ -31,7 +31,21 @@
     justify-content: center;
    }
 
+   #pageDescription{
+       text-align:center;
+   }
 
+   .mobilePic{
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+        width:50%;
+   }
+
+   .mobileBtn{
+       display:none;
+   }
+   
 .column-2 {
   float: center;
   padding: 40px;
@@ -103,4 +117,30 @@
   div.left {
     display: none;
   }
+}
+
+@media only screen and (max-width:1024px) {
+  #hidden-svg{
+    visibility:hidden;
+    height:0;
+    width:0;
+  }
+
+    .box{
+        display:none;
+    }
+
+  #pageDescription{
+    display:none;
+  }
+  .mobilePic{
+    display: block;
+    margin-left: auto;
+    margin-right: 75%;
+    width: 40%;
+  }
+
+  .mobileBtn{
+       display:flex;
+   }
 }

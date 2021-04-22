@@ -141,6 +141,6 @@
   }
 
   .mobileBtn{
-       display:flex;
+       display:block;
    }
 }

@@ -39,6 +39,7 @@ db.on('error', console.error.bind(console,'MongoDB conneciton error'));
 //home page
 app.get('/',function(req,res){
     var usedPlots = [];
+    var emptyPlots=[];
     Plot.find(function(err, plots){
        if(err){
             console.log(err);
@@ -51,11 +52,14 @@ app.get('/',function(req,res){
               //console.log("i made it in the loop")
                 if(plots[i].used){
                     usedPlots.push(plots[i].svgID)
-                    console.log(plots[i].svgID)
+                    //console.log(plots[i].svgID)
+                }
+                else{
+                    emptyPlots.push(plots[i].name)
                 }
             }
         }
-        res.render('index',{usedPlots:usedPlots});
+        res.render('index',{usedPlots:usedPlots,emptyPlots:emptyPlots});
         //console.log(usedPlots);
 
 });

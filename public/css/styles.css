@@ -1,3 +1,7 @@
+.boxV{
+    position: absolute;
+}
+
 .jumbotron{
    background-color: #ABC663;
    color: white;
@@ -43,28 +47,24 @@
    }
    
 .column-2 {
-  float: left;
-  width: 45%;
+  float: center;
   padding: 40px;
+  max-width: 70%; 
+  max-height: fit-content;
+  margin-bottom: 70px;
   padding-left:70px;
   padding-right: 70px;
-  height: 475px;
-  margin:30px;
-  margin-right:30px;
-  margin-bottom: 70px;
   background-color: #FFF8C2;
   line-height:2;
 }
 
-.large-profile {
-  background: url('../images/gardner.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
 .column{
     background-position: 300px 100px;
+    
+}
 
+@-ms-viewport{
+  width: device-width;
 }
 
 /* Make the calendar shrink for mobile */

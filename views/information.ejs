@@ -16,8 +16,8 @@
         <div id=wrapper>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Community Garden</a>
-                <button class="navbar-toggler" type="button" ia-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
@@ -100,7 +100,11 @@
     <!--Displayin Information-->
     <div class = "displayInfo">
         <h1 class="plantName"> <%=data.name %> </h1>
-        <img class ="image" src="https://res-4.cloudinary.com/do6bw42am/image/upload/c_scale,f_auto,h_300/v1/<%=data.image_url%>" alt = "Image of Plant"></img>
+        <img style="border:5px groove black;" class ="image" src="https://res-4.cloudinary.com/do6bw42am/image/upload/c_scale,f_auto,h_300/v1/<%=data.image_url%>" alt = "Image of Plant"></img>
+        <p>                                                         
+            <!--Space-->
+        </p> 
+
         <p class="plantDescription"> <b><%=data.description %> </b> </p>
         <p class = "os"> <b>Sun </b> : <%=data.optimal_sun %> </p>
         <p class = "soilo"> <b>Soil</b> : <%=data.optimal_soil %> </p>

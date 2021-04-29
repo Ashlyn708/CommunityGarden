@@ -49,11 +49,17 @@
                     <div class="mobileBtn">
                     <button type="button" id="modalBtnMobile" class=" btn btn-light btn-lg float-md-right" data-toggle="modal" data-target="#MobileModal">Plot Registration</button>
                     </div>
-                </div>
+                </div>  
                     <div class="mobilePic">
-                        <img src="images/FinalImageMobile.png" width="400px" height="500px"></img>
+                        <h5 style="text-align: center;">Left side plots:</h5>
+                        <img src="images/FinalImageMobileLeft.png"></img>
                     </div>
-                    <h6 id="pageDescription">Hello! This is an interactive map of the communitity. When you hover over a plot Plots that are green are available. Plots in brown are already rented.</h6>
+                    <div class="mobilePic">
+                        <h5 style="text-align: center;">Right side plots:</h5>
+                        <img src="images/FinalImageMobileRight.png"></img>
+                    </div>
+                    <h6 id="pageDescription">Welcome! This is an interactive map of the communitity garden. When you hover over a plot it turns dark green. 
+                        Plots that are green are available. Plots in brown are already rented.</h6>
                     <div class="box">
                         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
                         <svg class="hidden-svg"
@@ -754,7 +760,7 @@
        x="50.386585"
        y="-24.715448"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.71401px;font-family:Cambria;-inkscape-font-specification:'Cambria, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.253227"
-       id="tspan97">   Pie</tspan></text>
+       id="tspan97">   Patch</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.71401px;line-height:1.25;font-family:Cambria;-inkscape-font-specification:'Cambria, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.253227"
@@ -1532,6 +1538,7 @@
             <script>
                 var svgElement = document.getElementById('<%=usedPlots[i]%>');
                 svgElement.classList.add('plot-used'); 
+                svgElement.removeAttribute('data-toggle');
             </script> 
         <% } %>
     

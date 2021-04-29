@@ -119,7 +119,7 @@
   }
 }
 
-@media only screen and (max-width:1024px) {
+@media only screen and (max-width:600px) {
   #hidden-svg{
     visibility:hidden;
     height:0;
@@ -139,6 +139,7 @@
     margin-right: 75%;
     width: 40%;
   }
+
 
   .mobileBtn{
        display:block;

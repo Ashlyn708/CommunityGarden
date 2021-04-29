@@ -104,37 +104,72 @@
         <p>                                                         
             <!--Space-->
         </p> 
-            <style type="text/css">
-            .tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
-            .tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
-            font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
-            font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-            .tg .tg-lqe9{background-color:#657b83;text-align:center;vertical-align:top}
-            .tg .tg-baqh{text-align:center;vertical-align:top}
-            .tg .tg-0lax{text-align:left;vertical-align:top}
-            </style>
-            <table class="tg">
-            <thead>
-            <tr>
-                <th class="tg-baqh" colspan="2">About:</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td class="tg-0lax" colspan="2"> <%=data.description %> </td>
-            </tr>
-            <tr>
-                <td class="tg-lqe9">  <img style="width:10%; max-height: fit-content;"  src="../images/sun.png" alt=" sun">  </td>
-                <td class="tg-lqe9"> <img style="width:20%; max-height: fit-content;"  src="../images/soil.png" alt=" sun">
-                </td>
-            </tr>
-            <tr>
-                <td class="tg-0lax"> <%=data.optimal_sun %> </td>
-                <td class="tg-0lax"> <%=data.optimal_soil %>  </td>
-            </tr>
-            </tbody>
-            </table>
+         <style type="text/css">
+        .tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+        .tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+        font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+        font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+        .tg .tg-urjj{background-color:#657b83;text-align:left;vertical-align:top}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-y1d5{background-color:#657b83;border-color:#657b83;text-align:left;vertical-align:top}
+        .tg .tg-cw6g{background-color:#657b83;border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+        .tg .tg-0lax{text-align:left;vertical-align:top}
+        .tg .tg-moq0{background-color:#657b83;color:#002b36;text-align:left;vertical-align:top}
+        </style>
+        <table class="tg">
+        <thead>
+        <tr>
+            <th class="tg-c3ow" colspan="2">About:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="tg-0pky" colspan="2"> <%=data.description %> </td>
+        </tr>
+        <tr>
+            <td class="tg-cw6g">  <img style=" max-width:10%; max-height: fit-content;"  src="../images/sun.png" alt="sun"> </td>
+            <td class="tg-cw6g">  <img style=" max-width:10%; max-height: fit-content;"  src="../images/soil.png" alt="soil"> </td>
+        </tr>
+        <tr>
+            <td class="tg-0pky"> <%=data.optimal_sun %> </td>
+            <td class="tg-0pky"> <%=data.optimal_soil %>  </td>
+        </tr>
+        <tr>
+           <td class="tg-urjj" colspan="2"> <center>  <img style=" max-width:5%; max-height: fit-content;"  src="../images/seedPlant.png" alt="seed to plant"> </center> </td> 
+        </tr>
+        <tr>
+            <td class="tg-0lax" colspan="2"> <%=data.growing_from_seed %> </td>
+        </tr>
+        <tr>
+            <td class="tg-urjj" colspan="2">When to Plant:</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax" colspan="2"> <%=data.when_to_plant %> </td>
+        </tr>
+        <tr>
+            <td class="tg-urjj" colspan="2">Spacing: </td>
+        </tr>
+        <tr>
+            <td class="tg-0lax" colspan="2">  <%=data.spacing %>  </td>
+        </tr>
+        <tr>
+            <td class="tg-moq0">Water:</td>
+            <td class="tg-y1d5">Feed:</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax"> <%=data.watering %> </td>
+            <td class="tg-0lax"> <%=data.feeding %> </td>
+        </tr>
+        <tr>
+            <td class="tg-urjj" colspan="2">Harvesting:</td>
+        </tr>
+        <tr>
+            <td class="tg-0lax" colspan="2"> <%=data.harvesting %> </td>
+        </tr>
+        </tbody>
+        </table>
             
 <!-- 
         <p class="plantDescription"> <b><%=data.description %> </b> </p>

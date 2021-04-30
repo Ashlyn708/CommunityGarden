@@ -21,6 +21,7 @@ CONTENTS OF THIS FILE
 -Database
    - The index page uses MongoDB to hold the information it receives from the plot forms.
    - The database can be accesed through using the given email as the login
+   
 -Emails
    - For the emails to work in both the index page and contact page, the account owner has to 
     turn on less secure app access that can be found in the google account setting under security.

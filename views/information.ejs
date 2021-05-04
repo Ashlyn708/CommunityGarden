@@ -97,7 +97,7 @@
             <input style="color:white; border:none; font-size: 30x; background-color:#7895A4" type="submit" value="Show Crop"> 
     </style>
 
-    <!--Displayin Information-->
+    <!--Displaying Information-->
     <div class = "displayInfo">
         <h1 class="plantName"> <%=data.name %> </h1>
         <img style="border:5px groove black; max-width:350px;" class ="image" src="https://res-4.cloudinary.com/do6bw42am/image/upload/c_scale,f_auto,h_300/v1/<%=data.image_url%>" alt = "Image of Plant"></img>
@@ -110,8 +110,8 @@
         font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
         .tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
         font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-        .tg .tg-urjj{background-color:#657b83;text-align:left;vertical-align:top}
-        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+        .tg .tg-urjj{background-color:#657b83;text-align:left;vertical-align:top; font-weight: bold; color: black;}
+        .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top; font-weight: bold; color: black;}
         .tg .tg-y1d5{background-color:#657b83;border-color:#657b83;text-align:left;vertical-align:top}
         .tg .tg-cw6g{background-color:#657b83;border-color:inherit;text-align:center;vertical-align:top}
         .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
@@ -121,54 +121,54 @@
         <table class="tg">
         <thead>
         <tr>
-            <th class="tg-c3ow" colspan="2"> <center> About: </center> </th>
+            <th class="tg-c3ow"  colspan="2"> <center> About: </center> </th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td class="tg-0pky" colspan="2"> <center> <%=data.description %>
+            <td class="tg-0pky" colspan="2"> <center style = "font-size: medium;"> <%=data.description %>
             </center> </td>
         </tr>
         <tr>
-            <td class="tg-cw6g">  <img style=" max-width:10%; max-height: fit-content;"  src="../images/sun.png" alt="sun"> </td>
+            <td class="tg-cw6g" style = "width: 50%;">  <img style=" max-width:10%; max-height: fit-content;"  src="../images/sun.png" alt="sun"> </td>
             <td class="tg-cw6g">  <img style=" max-width:10%; max-height: fit-content;"  src="../images/soil.png" alt="soil"> </td>
         </tr>
         <tr>
-            <td class="tg-0pky"> <center> <%=data.optimal_sun %> </center>  </td>
-            <td class="tg-0pky"> <center>  <%=data.optimal_soil %> </center>  </td>
+            <td class="tg-0pky"> <center style = "font-size: medium;"> <%=data.optimal_sun %> </center>  </td>
+            <td class="tg-0pky"> <center style = "font-size: medium;">  <%=data.optimal_soil %> </center>  </td>
         </tr>
         <tr>
            <td class="tg-urjj" colspan="2"> <center>  <img style=" max-width:5%; max-height: fit-content;"  src="../images/seedPlant.png" alt="seed to plant"> </center> </td> 
         </tr>
         <tr>
-            <td class="tg-0lax" colspan="2"> <center>  <%=data.growing_from_seed %> </center> </td>
+            <td class="tg-0lax" colspan="2"> <center style = "font-size: medium;">  <%=data.growing_from_seed %> </center> </td>
         </tr>
         <tr>
             <td class="tg-urjj" colspan="2"> <center> When to Plant: </center> </td>
         </tr>
         <tr>
-            <td class="tg-0lax" colspan="2"><center>  <%=data.when_to_plant %> </center> </td>
+            <td class="tg-0lax" colspan="2"><center style = "font-size: medium;">  <%=data.when_to_plant %> </center> </td>
         </tr>
         <tr>
             <td class="tg-urjj" colspan="2"> <center> Spacing: </center> </td>
         </tr>
         <tr>
-            <td class="tg-0lax" colspan="2"> <center>  <%=data.spacing %> 
+            <td class="tg-0lax" colspan="2"> <center style = "font-size: medium;">  <%=data.spacing %> 
             </center>  </td>
         </tr>
         <tr>
-            <td class="tg-moq0"> <center>  <img style=" max-width:5%; max-height: fit-content;"  src="../images/waterIcon.png" alt="Water"> </center> </td>
-            <td class="tg-y1d5"><center> <img style=" max-width:20%; max-height: fit-content;"  src="../images/feed.png" alt="Feed">  </center> </td>
+            <td class="tg-moq0"> <center>  <img style=" max-width:10%; max-height: fit-content;"  src="../images/waterIcon.png" alt="Water"> </center> </td>
+            <td class="tg-y1d5"><center> <img style=" max-width:10%; max-height: fit-content;"  src="../images/feed.png" alt="Feed">  </center> </td>
         </tr>
         <tr>
-            <td class="tg-0lax"> <center> <%=data.watering %> </center>  </td>
-            <td class="tg-0lax"> <center> <%=data.feeding %> </center>  </td>
+            <td class="tg-0lax"> <center style = "font-size: medium;"> <%=data.watering %> </center>  </td>
+            <td class="tg-0lax"> <center style = "font-size: medium;"> <%=data.feeding %> </center>  </td>
         </tr>
         <tr>
             <td class="tg-urjj" colspan="2"> <center> Harvesting:</center> </td>
         </tr>
         <tr>
-            <td class="tg-0lax" colspan="2"> <center> <%=data.harvesting %> 
+            <td class="tg-0lax" colspan="2"> <center style = "font-size: medium;"> <%=data.harvesting %> 
             </center> </td>
         </tr>
         </tbody>
@@ -178,6 +178,7 @@
     <p>
 
         
+
     </p>
     <!-- Optional JavaScript; choose one of the two! -->
 

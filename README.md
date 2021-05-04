@@ -28,7 +28,7 @@ CONTENTS OF THIS FILE
    - For the emails to work in both the index page and contact page, the account owner has to 
     turn on less secure app access that can be found in the google account setting under security.
    - They also have confirm google.com/accounts/DisplayUnlockCaptcha .
-     Just allow access once and let nodemailer login automatically, it will.
+     They just allow access once and it let nodemailer login automatically.
 
 - Additional information
    - This page is currently hosted in Heroku: 

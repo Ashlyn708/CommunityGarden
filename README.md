@@ -31,5 +31,5 @@ CONTENTS OF THIS FILE
      They just allow access once and it let nodemailer login automatically.
 
 - Additional information
-   - This page is currently hosted in Heroku: 
+   - This page is currently hosted in Heroku: https://community-garden706.herokuapp.com/
    - Github Link: https://github.com/Ashlyn708/CommunityGarden.git

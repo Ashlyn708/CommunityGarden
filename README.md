@@ -33,3 +33,9 @@ CONTENTS OF THIS FILE
 - Additional information
    - This page is currently hosted in Heroku: https://community-garden706.herokuapp.com/
    - Github Link: https://github.com/Ashlyn708/CommunityGarden.git
+   - The following websites is giving credit to the icons on the information page:
+       - https://icons8.com/icon/1945/water
+       - https://www.freeiconspng.com/img/36253
+       - https://thenounproject.com/term/planting-seeds/ (Creative Commons)
+       - https://www.iconfinder.com/icons/4838601/bright_sun_sunlight_icon
+       - https://www.iconfinder.com/icons/1180858/charity_eco_food_green_organic_plant_icon

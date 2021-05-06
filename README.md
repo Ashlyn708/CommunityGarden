@@ -38,4 +38,4 @@ CONTENTS OF THIS FILE
        - https://www.freeiconspng.com/img/36253
        - https://thenounproject.com/term/planting-seeds/ (Creative Commons)
        - https://www.iconfinder.com/icons/4838601/bright_sun_sunlight_icon
-       - https://www.iconfinder.com/icons/1180858/charity_eco_food_green_organic_plant_icon
+       - https://freepikpsd.com/organic-icon-png-transparent-images/197246/

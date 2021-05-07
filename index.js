@@ -45,14 +45,9 @@ app.get('/',function(req,res){
             console.log(err);
         }
         else{
-            //usedPlots = [];
-            //console.log("i am outside of the loop")
-            //console.log(plots)
             for(i = 0 ; i < plots.length ; i++){
-              //console.log("i made it in the loop")
                 if(plots[i].used){
                     usedPlots.push(plots[i].svgID)
-                    //console.log(plots[i].svgID)
                 }
                 else{
                     emptyPlots.push(plots[i].name)
@@ -60,7 +55,6 @@ app.get('/',function(req,res){
             }
         }
         res.render('index',{usedPlots:usedPlots,emptyPlots:emptyPlots});
-        //console.log(usedPlots);
 
 });
 });
@@ -85,8 +79,7 @@ var mailOptions = {
   from: 'projectgarden706@gmail.com',
   to: Vrenter,
   subject: 'Your plot from the Community Garden',
-  text: 'Thank you for renting a plot at the community garden '+Vrenter+'. You have selected to plant '+Vcrop+' in ' + Vplot+ ' on '+Vdate+'.',
-  // html: '<h1>Hi Smartherd</h1><p>Your Messsage</p>'        
+  text: 'Thank you for renting a plot at the community garden '+Vrenter+'. You have selected to plant '+Vcrop+' in ' + Vplot+ ' on '+Vdate+'.',        
 };
 console.log(mailOptions)
 transporter.sendMail(mailOptions, function(error, info){
@@ -96,7 +89,7 @@ transporter.sendMail(mailOptions, function(error, info){
     console.log('Email sent: ' + info.response);
   }
 });
-    // Find the document that describes "lego"
+    // Find the document that describes plot name
 const query = { "name": Vplot };
 // Set some fields in that document
 const update = {

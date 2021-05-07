@@ -33,6 +33,7 @@ CONTENTS OF THIS FILE
 - Additional information
    - This page is currently hosted in Heroku: https://community-garden706.herokuapp.com/
    - Github Link: https://github.com/Ashlyn708/CommunityGarden.git
+   - DateTimePicker:https://github.com/pingcheng/bootstrap4-datetimepicker/
    - The following websites is giving credit to the icons on the information page:
        - https://icons8.com/icon/1945/water
        - https://www.freeiconspng.com/img/36253
